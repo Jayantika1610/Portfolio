@@ -1,0 +1,43 @@
+.timeline {
+    background-color: black;
+    font-size: 16px;
+    color: rgb(53, 53, 53);
+  }
+  
+  .title {
+    padding: 5rem;
+    font-size: 3rem;
+    text-align: center;
+    color: yellowgreen;
+  }
+  .title:hover{
+    color: purple;
+  }
+  h3 {
+    padding-top: 0.25em;
+    padding-bottom: 0.25rem;
+  }
+  
+  .vertical-timeline-element-content {
+    box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25),
+      0 0.4em 1.25em 0 rgba(0, 0, 0, 0.15) ;
+    padding: 2em 3em ;
+  }
+  
+  .date {
+    color: yellowgreen;
+  }
+  
+  #description {
+    margin: 1em 0 1em 0;
+  }
+  
+  
+  @media only screen and (max-width: 1700px) {
+    .vertical-timeline-element-date {
+      display: block;
+      float: none;
+      color: yellowgreen;
+      margin-top: 1em;
+    }
+  }

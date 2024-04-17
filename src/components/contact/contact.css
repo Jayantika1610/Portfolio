@@ -1,0 +1,87 @@
+.contact{
+    height: 100vh;
+    max-width: 1366px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding-left: 80px;
+    background-image: linear-gradient(rgb(15, 14, 14), rgb(92, 24, 82));
+    overflow: hidden;
+
+    .contact-text{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    h1{
+        font-size: 80px;
+        line-height: 88px;
+        font-weight: 600;
+        
+    }
+    h1:hover{
+        color: rgb(120, 177, 33);
+    }
+
+    .item:hover{
+        color: rgb(120, 177, 33);
+    }
+    span{
+        font-weight: 300;
+    }
+    .contact-form{
+        flex: 1;
+        padding-right: 100px;
+        position: relative;
+
+        .contactSvg{
+            position: absolute;
+            margin: auto;
+            z-index: -1;
+        }
+
+         form{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+         }
+
+         input,textarea{
+            padding: 20px;
+            background-color: transparent;
+            border: 1px solid white;
+            color: white;
+            border-radius: white;
+            border-radius: 5px;
+         }
+         
+         button{
+            padding: 15px;
+            font-size: 17px;
+            border: none;
+            background-color: rgb(120, 171, 33);
+            cursor: pointer;
+            font-weight: 600;
+            border-radius: 2px;
+            width: 10rem;
+         }
+
+         button:hover{
+            background-color: transparent;
+            border-radius: 2px;
+            border: 1px solid white;
+            
+         }
+    }
+}
+
+
+.footer {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }

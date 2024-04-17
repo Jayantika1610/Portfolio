@@ -1,0 +1,19 @@
+.skillsList {
+    font-size: 14px;
+    margin-right: 50px;
+    padding: 7px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 768px) {
+    .skillsList {
+      margin-right: 20px;
+    }
+  }
+  
+  .skillsList.active {
+    background-color: purple;
+    color: white;
+  }
+  
