@@ -60,7 +60,7 @@ const Contact = () => {
                             fill="none"
                             initial={{ pathLength: 0 }}
                             animate={isInView && { pathLength: 1 }}
-                            transition={{ duration: 4 }}
+                            transition={{ duration: 10 }}
                             stroke="rgb(120, 171, 33)"
                             strokeWidth="0.5"
                             strokeLinecap="round"

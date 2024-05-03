@@ -63,7 +63,7 @@ const Hero = () => {
   
   return (
     //initial gives how it would be initiall and whileInView to tell how the animate part gets executed when it is in view
-    <div className="hero">
+    <div className="hero" >
       <div className="hero-wrap">
         <motion.div className="hero-text" variants={contentVariants} initial="initial" whileInView="animate">
           <motion.h2 variants={contentVariants} className="hero-h2">Hi, This is Jayantika</motion.h2>

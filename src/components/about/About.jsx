@@ -3,8 +3,7 @@ import { motion } from 'framer-motion';
 import "./about.css";
 import img from "../../assets/about_img.jpg";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
-import resume from "../../assets/finallatest.pdf"
-
+import resume from "../../assets/finallatest.pdf";
 
 const About = () => {
     const [changingText] = useTypewriter({
@@ -29,7 +28,6 @@ const About = () => {
                             <button><a href="https://www.linkedin.com/in/jayantika-gupta-054906274/" target="_blank" rel="noopener noreferrer">LinkedIn</a></button>
                             <button><a href={resume} target="_blank" rel="noopener noreferrer">Download Resume</a></button>
                         </div>
-
                     </motion.div>
                     <motion.div
                         className="about-image"
@@ -42,7 +40,7 @@ const About = () => {
                 </div>
             </section>
         </div>
-    )
+    );
 }
 
 export default About;

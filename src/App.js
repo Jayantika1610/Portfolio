@@ -1,5 +1,5 @@
 import "./index.css";
-import Particle from "./utils/particles";
+// import Particle from "./utils/particles";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Contact from "./components/contact/Contact";
@@ -13,7 +13,7 @@ import Skills from "./components/skills/Skills"
 function App(){
     return <div className="App">
         <Cursor/>
-        <Particle />
+        {/* <Particle /> */}
         <section id="hero">
             <Navbar/>
             <Hero/>
