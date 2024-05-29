@@ -13,8 +13,8 @@ const contactVariants = {
         y: 0,
         opacity: 1,
         transition: {
-            duration: 0.5,
-            staggerChildren: 0.5,
+            duration: 0.8,
+            staggerChildren: 0.6,
         },
     },
 };
@@ -54,13 +54,13 @@ const Contact = () => {
                 </motion.div>
             </motion.div>
             <div className="contact-form">
-                <motion.div className="contactSvg" initial={{ opacity: 1 }} whileInView={{ opacity: 0 }} transition={{ delay: 3, duration: 1 }}>
+                <motion.div className="contactSvg" initial={{ opacity: 1 }} whileInView={{ opacity: 0 }} transition={{ delay: 2, duration: 1 }}>
                     <svg width="450px" height="450px" viewBox="0 0 64 64" >
                         <motion.path
                             fill="none"
                             initial={{ pathLength: 0 }}
                             animate={isInView && { pathLength: 1 }}
-                            transition={{ duration: 10 }}
+                            transition={{ duration: 5 }}
                             stroke="rgb(120, 171, 33)"
                             strokeWidth="0.5"
                             strokeLinecap="round"
@@ -73,7 +73,7 @@ const Contact = () => {
                     onSubmit={sendEmail}
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
-                    transition={{ delay: 4, duration: 1, staggerChildren: 0.5 }}>
+                    transition={{ delay: 3, duration: 1, staggerChildren: 0.5 }}>
                     <input type="text" required placeholder="Name" name="name" />
                     <input type="email" required placeholder="Email" email="email" />
                     <textarea rows={6} placeholder="Message" name="message" />

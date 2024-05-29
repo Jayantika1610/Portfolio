@@ -4,28 +4,31 @@ import "./skills.css";
 import java from "../../assets/leetcode.png";
 import problem from "../../assets/hackerrank.png";
 import react from "../../assets/reactjs.png"
-import javas from "../../assets/js.png"
-import python from "../../assets/python.png"
+import javas from "../../assets/java.jpg"
+import python from "../../assets/python.jpg"
 import c from "../../assets/c++.png"
-import node from "../../assets/nodejs.png"
-import mysql from "../../assets/mysql.png"
+import node from "../../assets/nodejs.jpg"
+import mysql from "../../assets/mysql.jpg"
+import firebase from "../../assets/firebase.png"
+import mongo from "../../assets/mongo.png"
+import generative from "../../assets/generative.png"
 
 const Skills=() => {
   const languages = [
     {
       id: 1,
       title: "Java",
-      img:java,
+      img:javas,
     },
     {
       id: 2,
       title: "Python",
-      img: java,
+      img: python,
     },
     {
       id: 3,
       title: "C/C++",
-      img:java,
+      img:c,
     },
    
     
@@ -40,22 +43,22 @@ const Skills=() => {
     {
       id: 2,
       title: "Problem-Solving",
-      img: java,
+      img: problem,
     },
     {
       id: 3,
       title: "Reactjs",
-      img: java,
+      img: react,
     },
     {
       id: 4,
       title: "Nodejs",
-      img: java,
+      img: node,
     },
     {
       id: 5,
       title: "Generative AI",
-      img: java,
+      img: generative,
     },
     {
       id: 6,
@@ -69,17 +72,17 @@ const Skills=() => {
     {
       id: 1,
       title: "MySQL",
-      img: java,
+      img: mysql,
     },
     {
       id: 2,
       title: "Firebase",
-      img:java,
+      img:firebase,
     },
     {
       id: 3,
       title: "MongoDB",
-      img:java,
+      img:mongo,
     },
   ];
   

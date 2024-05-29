@@ -38,17 +38,24 @@
         position: relative;
 
         .contactSvg{
-            position: absolute;
+            position: absolute; 
             margin: auto;
-            /* z-index: -1; */
+            z-index: -1;
         }
 
          form{
+            /* position: absolute; */
+            /* z-index: 100; */
             display: flex;
             flex-direction: column;
             gap: 20px;
          }
-
+         .newconatiner{
+            z-index: 100;
+         }
+         .svgcontainer{
+            z-index: -1;
+         }
          input,textarea{
             padding: 20px;
             background-color: transparent;
