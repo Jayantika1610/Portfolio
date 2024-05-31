@@ -12,7 +12,7 @@ const items = [
         title: "beatsforge.com",
         img: beats,
         desc: "A website made of mainly html, css and javascript which will help you enhance your skills when it comes to instruments and has two options- drums and piano to be practiced online!",
-        link: "https://github.com/Jayantika1610",
+        link: "https://jayantika1610.github.io/beatsforge.com/",
     },
     {
         id: 2,
@@ -26,13 +26,20 @@ const items = [
         title: "Tic-Tac-Toe",
         img: tictactoe,
         desc: "A web development project using HTML, CSS and JS. This is a user-friendly site for one of the most played games: tic-tac-toe",
-        link: "https://github.com/Jayantika1610",
+        link: "https://jayantika1610.github.io/Tic-tac-toe/",
     },
     {
         id: 4,
         title: "Health-Track",
         img:python,
         desc: "It is a project using pandas and matplotlib which can easily store and extract data from a csv file and is capable of making sure that the current health is absolutely fine when it comes to the basic types.",
+        link: "https://github.com/Jayantika1610",
+    },
+    {
+        id: 5,
+        title: "The-Dice-Jackpot",
+        img:python,
+        desc: "The Jackpot Game is a fun and simple project built with HTML, CSS, and JavaScript. It uses a random number generator to chose a picture which has 1-6 labelled with the dice and get it to the display.",
         link: "https://github.com/Jayantika1610",
     },
 ]
