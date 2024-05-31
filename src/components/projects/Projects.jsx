@@ -4,6 +4,7 @@ import python from "../../assets/pythonm.PNG";
 import beats from "../../assets/beatsforge.jpeg";
 import shuttle from "../../assets/shuttlesync.png"
 import tictactoe from "../../assets/tictactoe2.PNG";
+import jackpot from "../../assets/jackpot.PNG"
 import { motion, useScroll, useTransform,useSpring } from "framer-motion"
 
 const items = [
@@ -38,9 +39,9 @@ const items = [
     {
         id: 5,
         title: "The-Dice-Jackpot",
-        img:python,
+        img:jackpot,
         desc: "The Jackpot Game is a fun and simple project built with HTML, CSS, and JavaScript. It uses a random number generator to chose a picture which has 1-6 labelled with the dice and get it to the display.",
-        link: "https://github.com/Jayantika1610",
+        link: "https://jayantika1610.github.io/THE-DICE-JACKPOT/",
     },
 ]
 
