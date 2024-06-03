@@ -12,7 +12,7 @@ import Skills from "./components/skills/Skills"
 
 function App(){
     return <div className="App">
-        <Cursor/>
+        {/* <Cursor/> */}
         {/* <Particle /> */}
         <section id="hero">
             <Navbar/>
