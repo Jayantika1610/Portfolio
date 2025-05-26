@@ -1,94 +1,230 @@
-.contact{
-    height: 100vh;
+.contact {
+    min-height: 100vh;
     max-width: 1366px;
     margin: auto;
     display: flex;
     align-items: center;
     gap: 50px;
-    padding-left: 80px;
+    padding: 40px 80px;
     background-image: linear-gradient(rgb(15, 14, 14), rgb(92, 24, 82));
     overflow: hidden;
-
-    .contact-text{
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-    }
-
-    h1{
-        font-size: 80px;
-        line-height: 88px;
-        font-weight: 600;
-        
-    }
-    h1:hover{
-        color: rgb(120, 177, 33);
-    }
-
-    .item:hover{
-        color: rgb(120, 177, 33);
-    }
-    span{
-        font-weight: 300;
-    }
-    .contact-form{
-        flex: 1;
-        padding-right: 100px;
-        position: relative;
-
-        .contactSvg{
-            position: absolute; 
-            margin: auto;
-            z-index: -1;
-        }
-
-         form{
-            /* position: absolute; */
-            /* z-index: 100; */
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-         }
-         .newconatiner{
-            z-index: 100;
-         }
-         .svgcontainer{
-            z-index: -1;
-         }
-         input,textarea{
-            padding: 20px;
-            background-color: transparent;
-            border: 1px solid white;
-            color: white;
-            border-radius: white;
-            border-radius: 5px;
-         }
-         
-         button{
-            padding: 15px;
-            font-size: 17px;
-            border: none;
-            background-color: rgb(120, 171, 33);
-            cursor: pointer;
-            font-weight: 600;
-            border-radius: 2px;
-            width: 10rem;
-         }
-
-         button:hover{
-            background-color: transparent;
-            border-radius: 2px;
-            border: 1px solid white;
-            
-         }
-    }
+    box-sizing: border-box;
 }
 
+.contact-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.contact h1 {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    line-height: 1.1;
+    font-weight: 600;
+    margin: 0;
+}
+
+.contact h1:hover {
+    color: rgb(120, 177, 33);
+}
+
+.contact .item {
+    transition: color 0.3s ease;
+}
+
+.contact .item:hover {
+    color: rgb(120, 177, 33);
+}
+
+.contact .item h2 {
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    margin: 0 0 0.5rem 0;
+}
+
+.contact span {
+    font-weight: 300;
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+}
+
+.contact-form {
+    flex: 1;
+    padding-right: 50px;
+    position: relative;
+}
+
+.contactSvg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.contactSvg svg {
+    width: clamp(200px, 40vw, 450px);
+    height: clamp(200px, 40vw, 450px);
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.contact input,
+.contact textarea {
+    padding: 20px;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    border-radius: 5px;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    transition: border-color 0.3s ease;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+    outline: none;
+    border-color: rgb(120, 171, 33);
+}
+
+.contact input::placeholder,
+.contact textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.contact button {
+    padding: 15px 20px;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    border: none;
+    background-color: rgb(120, 171, 33);
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 5px;
+    width: fit-content;
+    min-width: 140px;
+    transition: all 0.3s ease;
+    color: black;
+}
+
+.contact button:hover {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+}
 
 .footer {
     background-color: black;
     color: white;
-    padding: 10px;
+    padding: 20px 10px;
     text-align: center;
-  }
+    font-size: clamp(0.8rem, 2vw, 1rem);
+}
+
+/* Tablet styles */
+@media screen and (max-width: 768px) {
+    .contact {
+        flex-direction: column;
+        padding: 30px 40px;
+        gap: 30px;
+        text-align: center;
+        min-height: auto;
+    }
+    
+    .contact-text {
+        gap: 30px;
+        width: 100%;
+    }
+    
+    .contact-form {
+        width: 100%;
+        padding-right: 0;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .contactSvg {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .contactSvg svg {
+        width: clamp(150px, 35vw, 300px);
+        height: clamp(150px, 35vw, 300px);
+    }
+    
+    .contact form {
+        position: static;
+    }
+}
+
+/* Mobile styles */
+@media screen and (max-width: 480px) {
+    .contact {
+        padding: 20px 20px;
+        gap: 20px;
+    }
+    
+    .contact-text {
+        gap: 20px;
+    }
+    
+    .contact .item {
+        text-align: left;
+    }
+    
+    .contact input,
+    .contact textarea {
+        padding: 15px;
+    }
+    
+    .contact button {
+        width: 100%;
+        padding: 15px;
+        min-width: auto;
+    }
+    
+    .contactSvg svg {
+        width: clamp(120px, 50vw, 200px);
+        height: clamp(120px, 50vw, 200px);
+    }
+    
+    .footer {
+        padding: 15px 10px;
+    }
+}
+
+/* Large desktop styles */
+@media screen and (min-width: 1200px) {
+    .contact {
+        padding: 60px 100px;
+    }
+    
+    .contact-form {
+        padding-right: 100px;
+    }
+}
+
+/* Extra small mobile */
+@media screen and (max-width: 320px) {
+    .contact {
+        padding: 15px 15px;
+    }
+    
+    .contact-text {
+        gap: 15px;
+    }
+    
+    .contact input,
+    .contact textarea {
+        padding: 12px;
+    }
+}
