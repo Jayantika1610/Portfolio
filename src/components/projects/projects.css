@@ -1,25 +1,29 @@
 .projects {
-    scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;
-    position: relative;   
+    position: relative;
 }
 
+.project-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
 
 h4{
-    padding-top:20px;
+    padding-top: 20px;
     font-weight: 400;
     color: yellowgreen;
-    
 }
 
 h4:hover{
-    color:purple;
+    color: purple;
+    transition: color 0.3s ease;
 }
+
 .progress {
     position: sticky;
     top: 0;
     left: 0;
-    padding-top: 20px;
+    padding: 20px;
     text-align: center;
     color: purple;
     font-size: 3rem;
@@ -27,12 +31,19 @@ h4:hover{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    z-index: 10;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .progressBar {
     height: 0.4rem;
     width: 80%;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    overflow: hidden;
+    transform-origin: left;
 }
 
 .container {
@@ -40,24 +51,23 @@ h4:hover{
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
     overflow: hidden;
+    padding: 2rem 0;
 }
 
 .wrapper {
     max-width: 1366px;
-    height: 100%;
+    width: 100%;
     margin: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 6rem;
-    
 }
 
 .image-container {
     flex: 1;
-    height: 50%;
     margin-left: 70px;
     padding: 100px 0px 0px 120px;
 }
@@ -65,7 +75,13 @@ h4:hover{
 .image-container img {
     width: 400px;
     height: 200px;
-   
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-container img:hover {
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
 }
 
 .text-container {
@@ -75,22 +91,27 @@ h4:hover{
     gap: 2rem;
     padding: 100px 250px 0px 0px;
 }
+
 .project-heading{
     font-size: 1.5rem;
     color: purple;
+    transition: color 0.3s ease;
 }
 
 .project-heading:hover{
-    color:yellowgreen;
+    color: yellowgreen;
 }
+
 .project-desc {
     font-size: 1rem;
     color: lavender;
     font-style: italic;
+    line-height: 1.6;
 }
 
 .project-github {
     background-color: purple;
+    color: white;
     border: none;
     border-radius: 10px;
     padding: 0.8rem;
@@ -98,4 +119,146 @@ h4:hover{
     font-weight: 600;
     font-size: large;
     cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.project-github:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(128, 0, 128, 0.3);
+}
+
+/* Smooth scrolling improvements */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Mobile styles (up to 768px) */
+@media (max-width: 768px) {
+    .progress {
+        font-size: 2rem;
+        padding: 15px;
+    }
+    
+    .project-section {
+        min-height: auto;
+        padding: 2rem 0;
+    }
+    
+    .container {
+        min-height: auto;
+        padding: 1rem 0;
+    }
+    
+    .wrapper {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 20px;
+    }
+    
+    .image-container {
+        margin-left: 0;
+        padding: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .image-container img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        aspect-ratio: 2/1;
+        object-fit: cover;
+    }
+    
+    .text-container {
+        padding: 0;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .project-heading {
+        font-size: 1.2rem;
+    }
+    
+    .project-desc {
+        font-size: 0.9rem;
+    }
+    
+    .project-github {
+        width: auto;
+        padding: 0.6rem 1.2rem;
+        margin: 0 auto;
+    }
+}
+
+/* Tablet styles (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .progress {
+        font-size: 2.5rem;
+    }
+    
+    .container {
+        padding: 1.5rem 0;
+    }
+    
+    .wrapper {
+        gap: 4rem;
+        padding: 20px;
+    }
+    
+    .image-container {
+        margin-left: 30px;
+        padding: 50px 0px 0px 60px;
+    }
+    
+    .image-container img {
+        width: 300px;
+        height: 150px;
+    }
+    
+    .text-container {
+        padding: 50px 100px 0px 0px;
+    }
+    
+    .project-heading {
+        font-size: 1.3rem;
+    }
+}
+
+/* Large tablet/small desktop (1025px to 1366px) */
+@media (min-width: 1025px) and (max-width: 1366px) {
+    .wrapper {
+        gap: 4rem;
+    }
+    
+    .image-container {
+        margin-left: 50px;
+        padding: 80px 0px 0px 80px;
+    }
+    
+    .image-container img {
+        width: 350px;
+        height: 175px;
+    }
+    
+    .text-container {
+        padding: 80px 150px 0px 0px;
+    }
+}
+
+/* Smooth scrolling for better performance */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .projects {
+        scroll-behavior: auto;
+    }
 }

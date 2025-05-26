@@ -5,7 +5,7 @@ import beats from "../../assets/beatsforge.jpeg";
 import shuttle from "../../assets/shuttlesync.png"
 import tictactoe from "../../assets/tictactoe2.PNG";
 import jackpot from "../../assets/jackpot.PNG"
-import { motion, useScroll, useTransform,useSpring } from "framer-motion"
+import { motion, useScroll, useTransform, useSpring } from "framer-motion"
 
 const items = [
     {
@@ -32,68 +32,135 @@ const items = [
     {
         id: 4,
         title: "Health-Track",
-        img:python,
+        img: python,
         desc: "It is a project using pandas and matplotlib which can easily store and extract data from a csv file and is capable of making sure that the current health is absolutely fine when it comes to the basic types.",
         link: "https://github.com/Jayantika1610",
     },
     {
         id: 5,
         title: "The-Dice-Jackpot",
-        img:jackpot,
+        img: jackpot,
         desc: "The Jackpot Game is a fun and simple project built with HTML, CSS, and JavaScript. It uses a random number generator to chose a picture which has 1-6 labelled with the dice and get it to the display.",
         link: "https://jayantika1610.github.io/THE-DICE-JACKPOT/",
     },
 ]
 
-
-const SingleProject = ({item}) => {
+const SingleProject = ({ item, index }) => {
     const ref = useRef()
 
     const { scrollYProgress } = useScroll({
         target: ref,
+        offset: ["start end", "end start"]
     });
 
-    const y = useTransform(scrollYProgress, [0, 1], [-150,150])
+    const imageY = useTransform(scrollYProgress, [0, 1], [-50, 50])
+    const textY = useTransform(scrollYProgress, [0, 1], [50, -50])
+    const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0])
+
     return (
-        <section>
-            <div className="container">
+        <section className="project-section" ref={ref}>
+            <motion.div 
+                className="container"
+                style={{ opacity }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                viewport={{ once: false, amount: 0.3 }}
+            >
                 <div className="wrapper">
-                    <motion.div className="image-container" ref={ref} style={{y}}>
-                        <img src={item.img} alt={item.title} />
+                    <motion.div 
+                        className="image-container" 
+                        style={{ y: imageY }}
+                    >
+                        <motion.img 
+                            src={item.img} 
+                            alt={item.title}
+                            whileHover={{ scale: 1.05 }}
+                            transition={{ duration: 0.3, ease: "easeOut" }}
+                        />
                     </motion.div>
-                    <motion.div className="text-container" style={{y}}>
-                        <h2 className="project-heading">{item.title}</h2>
-                        <p className="project-desc">{item.desc}</p>
-                        <a href={item.link} target="_blank"><button className="project-github">Github link</button></a>
+                    <motion.div 
+                        className="text-container" 
+                        style={{ y: textY }}
+                    >
+                        <motion.h2 
+                            className="project-heading"
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.2 }}
+                            viewport={{ once: false, amount: 0.5 }}
+                        >
+                            {item.title}
+                        </motion.h2>
+                        <motion.p 
+                            className="project-desc"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.4 }}
+                            viewport={{ once: false, amount: 0.5 }}
+                        >
+                            {item.desc}
+                        </motion.p>
+                        <motion.a 
+                            href={item.link} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.6 }}
+                            viewport={{ once: false, amount: 0.5 }}
+                        >
+                            <motion.button 
+                                className="project-github"
+                                whileHover={{ 
+                                    scale: 1.05,
+                                    backgroundColor: "#8b5cf6",
+                                    boxShadow: "0 10px 25px rgba(139, 92, 246, 0.3)"
+                                }}
+                                whileTap={{ scale: 0.95 }}
+                                transition={{ duration: 0.2 }}
+                            >
+                                View Project
+                            </motion.button>
+                        </motion.a>
                     </motion.div>
                 </div>
-            </div>
+            </motion.div>
         </section>
     )
 }
 
 const Projects = () => {
-
     const ref = useRef()
 
-    const {scrollYProgress} = useScroll({
-        target:ref,
-        offset:["end end","start start"]
+    const { scrollYProgress } = useScroll({
+        target: ref,
+        offset: ["start start", "end start"]
     })
 
-    const scaleX=useSpring(scrollYProgress,{
-        stiffness:100,
-        damping:30
+    const scaleX = useSpring(scrollYProgress, {
+        stiffness: 100,
+        damping: 30,
+        restDelta: 0.001
     })
 
     return (
         <div className="projects" ref={ref}>
-            <div className="progress">
+            <motion.div 
+                className="progress"
+                initial={{ opacity: 0, y: -50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+            >
                 <h4>My Projects</h4>
-                <motion.div style={{scaleX}}className="progressBar"></motion.div>
-            </div>
-            {items.map(item=>(
-                <SingleProject item={item} key={item.id} />
+                <motion.div 
+                    style={{ scaleX }} 
+                    className="progressBar"
+                    initial={{ scaleX: 0 }}
+                />
+            </motion.div>
+            {items.map((item, index) => (
+                <SingleProject item={item} key={item.id} index={index} />
             ))}
         </div>
     )
