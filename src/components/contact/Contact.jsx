@@ -46,11 +46,11 @@ const Contact = () => {
                 </motion.div>
                 <motion.div className="item" variants={contactVariants}>
                     <h2>Address</h2>
-                    <span>Pune, Maharashtra</span>
+                    <span>Maharashtra</span>
                 </motion.div>
                 <motion.div className="item" variants={contactVariants}>
                     <h2>Phone</h2>
-                    <span>+91-7800257218</span>
+                    <span>+91-9988776655</span>
                 </motion.div>
             </motion.div>
             <div className="contact-form">

@@ -32,6 +32,7 @@ section {
     font-weight: 400;
     font-style: normal;
     padding: 0 20px;
+    position: relative;
 }
 
 .wrapper {
@@ -42,6 +43,11 @@ section {
     margin: 0 auto;
     height: 100%;
     position: relative;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
 }
 
 .logoicon {
@@ -62,7 +68,8 @@ section {
     color: purple;
 }
 
-.menu {
+/* Desktop Menu */
+.desktop-menu {
     color: lavender;
     display: flex;
     gap: clamp(10px, 3vw, 20px);
@@ -74,11 +81,126 @@ section {
     font-size: clamp(0.8rem, 2vw, 0.9rem);
     transition: color 0.3s, font-size 0.3s;
     padding: 8px 12px;
+    text-decoration: none;
 }
 
 .navbar a:hover {
     color: purple;
     font-size: clamp(0.85rem, 2.1vw, 1rem);
+}
+
+/* Hamburger Button */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.hamburger-line {
+    width: 100%;
+    height: 3px;
+    background-color: lavender;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+/* Mobile Menu */
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    backdrop-filter: blur(4px);
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100vh;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-menu a {
+    color: lavender;
+    font-size: 1.2rem;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-align: center;
+    width: 80%;
+}
+
+.mobile-menu a:hover {
+    color: purple;
+    background-color: rgba(128, 0, 128, 0.1);
+    transform: translateX(-5px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0 15px;
+    }
+    
+    .desktop-menu {
+        display: none;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    .wrapper span {
+        font-size: clamp(1.2rem, 3.5vw, 1.8rem);
+        margin-left: 8px;
+    }
+    
+    .logoicon {
+        height: clamp(50px, 8vw, 80px);
+        width: clamp(50px, 8vw, 80px);
+        padding: 4px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        height: 80px;
+        padding: 0 10px;
+    }
+    
+    .mobile-menu {
+        width: 100vw;
+    }
+    
+    .wrapper span {
+        font-size: clamp(1rem, 3vw, 1.5rem);
+        margin-left: 5px;
+    }
+    
+    .logoicon {
+        height: clamp(40px, 7vw, 60px);
+        width: clamp(40px, 7vw, 60px);
+        padding: 2px;
+    }
 }
 
 /* Social Icon Bar */
@@ -106,6 +228,13 @@ section {
 .linkedin, .github, .hackerrank, .leetcode {
     height: clamp(20px, 4vw, 25px);
     width: clamp(20px, 4vw, 25px);
+}
+
+/* Hide social icons on very small screens to avoid overlap */
+@media (max-width: 480px) {
+    .icon-bar {
+        display: none;
+    }
 }
 
 /* Hero Section */
